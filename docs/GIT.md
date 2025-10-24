@@ -26,15 +26,37 @@ Git Flowは、Gitブランチモデルの一つで、以下のようなブラン
 
 1. **新機能開発**
    - `claude/develop-{session-id}`ブランチから`claude/feature-{機能名}-{session-id}`を作成
-   - 開発完了後、`claude/develop-{session-id}`へPR作成・マージ
+   - 開発完了後、`main`へPR作成・マージ（**各機能は完成後メインにマージする**）
+   - **マージ後、機能ブランチは削除する**
 
 2. **リリース準備**
    - `claude/develop-{session-id}`ブランチから`claude/release-{バージョン}-{session-id}`を作成
    - リリース準備完了後、`main`と`claude/develop-{session-id}`の両方にマージ
+   - **マージ後、releaseブランチは削除する**
 
 3. **緊急修正**
    - `main`ブランチから`claude/hotfix-{修正内容}-{session-id}`を作成
    - 修正完了後、`main`と`claude/develop-{session-id}`の両方にマージ
+   - **マージ後、hotfixブランチは削除する**
+
+### ブランチクリーンアップルール
+
+**重要:** マージした後は機能ブランチを必ず削除すること
+
+- **ローカルブランチの削除:**
+  ```bash
+  git branch -d claude/feature-xxx-{session-id}
+  ```
+
+- **リモートブランチの削除:**
+  ```bash
+  git push origin --delete claude/feature-xxx-{session-id}
+  ```
+
+- **理由:**
+  - リポジトリをクリーンに保つ
+  - 古いブランチによる混乱を防ぐ
+  - どのブランチが現在アクティブかを明確にする
 
 ### 参考資料
 
