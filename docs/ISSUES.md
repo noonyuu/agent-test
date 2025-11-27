@@ -80,6 +80,31 @@ Next.js、TypeScript、Tailwind CSS、BiomeでBulletproof-React構成のプロ�
 
 ---
 
+## Issue #4: 折れ線グラフ機能の実装
+
+**Title:** 折れ線グラフ機能の実装
+**Labels:** `feature`
+
+### 機能
+
+左から右にアニメーション表示される独自の折れ線グラフ機能
+
+### 詳細
+
+- SVGを使用した独自の折れ線グラフ実装（外部ライブラリは使用しない）
+- データポイントの表示
+- 滑らかな折れ線の描画
+- 左から右へのアニメーション効果
+- グリッドとラベルの表示
+- レスポンシブデザイン
+- Bulletproof-React構成での実装
+  - `src/features/graph/` に配置
+  - コンポーネント、hooks、types を適切に分離
+
+**Branch:** `claude/feature-graph-011CUR1YvGRZhoZX9eNQHxac`
+
+---
+
 ## 開発の流れ
 
 1. GitHub UIで上記のIssueを作成
