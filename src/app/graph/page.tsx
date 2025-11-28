@@ -1,7 +1,7 @@
 "use client";
 
-import { Graph } from "@/features/graph/components/Graph";
-import { useGraphData } from "@/features/graph/hooks/useGraphData";
+import { Graph } from "@/src/features/graph/components/Graph";
+import { useGraphData } from "@/src/features/graph/hooks/useGraphData";
 import Link from "next/link";
 
 export default function GraphPage() {
