@@ -27,6 +27,22 @@ const services: Service[] = [
     bgColor: "bg-green-500",
   },
   {
+    id: "graph",
+    title: "折れ線グラフ",
+    description: "左から右にアニメーション表示される独自の折れ線グラフ",
+    href: "/graph",
+    icon: "📊",
+    bgColor: "bg-purple-500",
+  },
+  {
+    id: "graph",
+    title: "折れ線グラフ",
+    description: "左から右にアニメーション表示される独自の折れ線グラフ",
+    href: "/graph",
+    icon: "📊",
+    bgColor: "bg-purple-500",
+  },
+  {
     id: "pomodoro",
     title: "ポモドーロタイマー",
     description: "集中作業と休憩を管理するポモドーロテクニック用タイマー",
