@@ -41,7 +41,15 @@ const services: Service[] = [
     href: "/graph",
     icon: "📊",
     bgColor: "bg-purple-500",
-  }
+  },
+  {
+    id: "pomodoro",
+    title: "ポモドーロタイマー",
+    description: "集中作業と休憩を管理するポモドーロテクニック用タイマー",
+    href: "/pomodoro",
+    icon: "🍅",
+    bgColor: "bg-red-500",
+  },
 ];
 
 export default function Home() {
