@@ -1,10 +1,10 @@
 "use client";
 
-import { CalendarGrid } from "@/features/calendar/components/CalendarGrid";
-import { CalendarHeader } from "@/features/calendar/components/CalendarHeader";
-import { EventModal } from "@/features/calendar/components/EventModal";
-import { useCalendar } from "@/features/calendar/hooks/useCalendar";
-import { useDragAndDrop } from "@/features/calendar/hooks/useDragAndDrop";
+import { CalendarGrid } from "@/src/features/calendar/components/CalendarGrid";
+import { CalendarHeader } from "@/src/features/calendar/components/CalendarHeader";
+import { EventModal } from "@/src/features/calendar/components/EventModal";
+import { useCalendar } from "@/src/features/calendar/hooks/useCalendar";
+import { useDragAndDrop } from "@/src/features/calendar/hooks/useDragAndDrop";
 import Link from "next/link";
 
 export default function CalendarPage() {
@@ -31,13 +31,25 @@ export default function CalendarPage() {
   const { dragState, handleDragStart, handleDragOver, handleDragEnd, handleDragLeave } =
     useDragAndDrop(moveEvent);
 
-  const handleSaveEvent = (eventData: typeof editingEvent) => {
-    if (eventData) {
-      if (eventData.id) {
-        updateEvent(eventData);
-      } else {
-        addEvent(eventData);
-      }
+  const handleSaveEvent = (eventData: {
+    id?: string;
+    title: string;
+    description: string;
+    startTime: string;
+    endTime: string;
+    date: string;
+  }) => {
+    if (eventData.id) {
+      updateEvent({
+        id: eventData.id,
+        title: eventData.title,
+        description: eventData.description,
+        startTime: eventData.startTime,
+        endTime: eventData.endTime,
+        date: eventData.date,
+      });
+    } else {
+      addEvent(eventData);
     }
   };
 
