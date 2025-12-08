@@ -26,6 +26,14 @@ const services: Service[] = [
     icon: "🔢",
     bgColor: "bg-green-500",
   },
+  {
+    id: "calendar",
+    title: "カレンダー",
+    description: "その日の予定を管理できるカレンダー。ドラッグ&ドロップで予定を移動可能",
+    href: "/calendar",
+    icon: "📅",
+    bgColor: "bg-orange-500",
+  },
 ];
 
 export default function Home() {
